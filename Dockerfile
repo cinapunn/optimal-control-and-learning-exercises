@@ -1,5 +1,5 @@
 # use the official Python image from Docker Hub
-FROM python:3.10-slim
+FROM --platform=linux/arm64 python:3.10-slim
 
 # install system dependencies
 RUN apt-get update && apt-get install -y \

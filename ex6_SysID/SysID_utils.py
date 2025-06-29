@@ -244,6 +244,8 @@ class Identifier_BLR(Identifier_LR):
         h = h.reshape(-1, 1)
         Phi = np.hstack([f(p) for f in self.basis_functions])  # N x B
         B = Phi.shape[1]
+        
+        self.cached_Phi = Phi
 
         # Set prior mean and covariance
         mu0 = self.mu0_user if self.mu0_user is not None else np.zeros((B, 1))
